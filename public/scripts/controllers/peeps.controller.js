@@ -10,6 +10,14 @@ myApp.controller('WhereMyPeeps', function ($http, PeepsService) {
     }; //end whereMyPeepsAt
 
     vm.peepShow = {};
+    vm.peepToDelete = vm.peep;
+
+    vm.deletePeep = function (peepToDelete){
+        console.log('peep to delete inside controller is ->', peepToDelete);
+        PeepsService.peeps.delete(peepToDelete);
+        // logic to delete off MongoDB
+        
+    };
 
     vm.whereMyPeepsAt = function () {
         console.log('in whereMyPeepsAt');

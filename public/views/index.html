@@ -23,7 +23,7 @@
       <button ng-click='wmp.whereMyPeepsAt()'>Read</button>
       <ul>
         <li id="not-invisible" ng-repeat="peep in wmp.peepShow.list">
-          {{peep.name}}, {{peep.location}}
+          {{peep.name}}, {{peep.location}}. <button class="deleteButton" ng-click="wmp.deletePeep(peep)">DELETE</button>
         </li>
       </ul>
     </div>

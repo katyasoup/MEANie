@@ -21,6 +21,14 @@ myApp.service('PeepsService', function ($http) {
                 sv.peepShow.list = response.data;
                 console.log('peep show', sv.peepShow);
             });
+        },
+        delete: function(peepToDelete){
+            console.log('logging inside peeps service delete function -> ', peepToDelete);
+            return $http({
+                method: 'DELETE',
+                url: '/peeps',
+                data: peepToDelete._id
+            });
         }
     };
 });

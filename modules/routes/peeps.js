@@ -9,10 +9,15 @@ var peepsSchema = new mongoose.Schema({
     location: String
 });
 var peepsModel = mongoose.model('peepsModel', peepsSchema);
+router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({
     extended: true
 }));
-router.use(bodyParser.json());
+
+router.delete('/', function(req, res){
+    // peepsModel.
+});
+
 router.get('/', function (req, res) {
     // get and send back all the things
     peepsModel.find().then(function (data) {
